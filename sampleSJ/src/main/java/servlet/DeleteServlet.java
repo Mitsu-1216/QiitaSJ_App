@@ -20,12 +20,13 @@ public class DeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		// リクエストパラメータの取得
 		String text = request.getParameter("text");
 
 		ServletContext application = this.getServletContext();
 		List<TodoBeans> todoList = (List<TodoBeans>) application.getAttribute("todoList");
 
-		// taskを検索
+		// 削除ボタンが押下されたタスクのインデックス番号を取得
 		int listIndex = 0;
 		for (int i = 0; i < todoList.size(); i++) {
 			if (todoList.get(i).getText().equals(text))
