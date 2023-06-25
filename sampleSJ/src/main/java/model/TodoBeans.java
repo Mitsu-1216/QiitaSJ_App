@@ -11,13 +11,8 @@ public class TodoBeans implements Serializable {
 	}
 
 	public TodoBeans(String userName, String text,String deadline) {
-		this.userName = userName;
 		this.text = text;
 		this.deadline = deadline;
-	}
-
-	public String getUserName() {
-		return userName;
 	}
 
 	public String getText() {

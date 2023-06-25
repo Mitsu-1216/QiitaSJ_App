@@ -37,7 +37,7 @@ public class MainServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("name",name);
 		
-		if (name == null) {
+		if (name == null || name =="") {
 			response.sendRedirect("/sampleSJ/");
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
