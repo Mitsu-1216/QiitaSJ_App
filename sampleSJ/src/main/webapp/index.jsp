@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String errorName = (String) request.getAttribute("errorName");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +50,9 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 <body>
 <div class="container text-center">
 <h1 class="my-5">Todoアプリへようこそ！</h1>
+<% if(errorName != null) { %>
+<p><%= errorName %></p>
+<% } %>
 <form action="/sampleSJ/MainServlet" method="get">
 お名前：<input type="text" name="name">
 <input type="submit" class="Button-style mx-3" value="はじめる">

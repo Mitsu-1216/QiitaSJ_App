@@ -60,7 +60,7 @@ String stringDate= format.format(date);
 <input type="submit" value="登録" class="btn btn-primary">
 </form>
 <% if(errorMsg != null) { %>
-<p><%= errorMsg %></p>
+<p class="my-3"><%= errorMsg %></p>
 <% } %>
 <table class="table table-bordered my-5 table-striped" border="1">
 <tr>

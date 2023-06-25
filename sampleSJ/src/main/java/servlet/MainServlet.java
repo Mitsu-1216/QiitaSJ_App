@@ -32,13 +32,14 @@ public class MainServlet extends HttpServlet {
 		}
 		
 		String name = request.getParameter("name");
-		
 
 		HttpSession session = request.getSession();
 		session.setAttribute("name",name);
 		
-		if (name == null || name =="") {
-			response.sendRedirect("/sampleSJ/");
+		if (name == null || name.length() == 0) {
+			request.setAttribute("errorName","お名前を入力してください");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+			dispatcher.forward(request, response);
 		} else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/todo.jsp");
 			dispatcher.forward(request, response);
